@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Shared secret creation</title>
+<script src="nacl.min.js"></script>
+<script src="nacl-util.min.js"></script>
+<script>
+  function generate () {
+    document.getElementById('ss').value = ''
+    try {
+      const ss = nacl.box.before(nacl.util.decodeBase64(getVal('tpk')), nacl.util.decodeBase64(getVal('sk')))
+      setVal('ss', nacl.util.encodeBase64(ss))
+    } catch (err) { }
+  }
+
+  function initSK () {
+    const kp = nacl.box.keyPair()
+    setVal('sk', nacl.util.encodeBase64(kp.secretKey))
+    setVal('mpk', nacl.util.encodeBase64(kp.publicKey))
+  }
+
+  function copyText (id) {
+    document.getElementById(id).select()
+    document.execCommand('copy')
+  }
+</script>
+</head>
+<body onload="initSK()">
+  <h3>Shared secret creation</h3>
+  <input type="hidden" id="sk">
+  <p>My public key:&nbsp;<input type="text" id="mpk" size="60" readonly>&nbsp;<button onclick="copyText('mpk')">Copy</button></p>
+  <p>Their public key:&nbsp;<input type="text" id="tpk" size="60" oninput="generate()"></p>
+  <p>Shared secret:&nbsp;<input type="text" id="ss" size="60" readonly>&nbsp;<button onclick="copyText('ss')">Copy</button></p>
+  <h4>Instructions</h4>
+  <ol>
+  <li>A random <i>My public key</i> is generated every time this page is refreshed. It is read only.</li>
+  <li>Send <i>My public key</i> to the other party. Get <i>Their public key</i> from them.</li>
+  <li>Do not refresh the page while you and the other party are swapping your public keys.</li>
+  <li>Paste their public key into <i>Their public key</i> field. The <i>Shared secret</i> will appear if the key is valid.</li>
+  <li>The shared secret can be used as a password to encrypt and decrypt a private message between you and the other party. 
+    For example, zip files can be password encrypted and sent as attachments. Tip: send an encrypted message containing a simpler password.</li>
+  </ol>
+  <br>
+</body>
+</html>
