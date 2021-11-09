@@ -8,6 +8,8 @@
 <script>
   function setVal (id, val) { document.getElementById(id).value = val }
   
+  function getVal (id) { return document.getElementById(id).value.trim() }
+  
   function generate () {
     setVal('ss', '')
     try {
