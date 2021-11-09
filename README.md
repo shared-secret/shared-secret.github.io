@@ -4,7 +4,7 @@ Create a secret password known only to you and another party, without ever commu
 Self-documented Github page: https://shared-secret.github.io
 
 <h4>Security notes</h4>
-  <p>The above HTML page, once served to your computer, have no further communication
+  <p>The above HTML page, once served to your computer, has no further communication
   with the server or any other entity. No cookies or local data storage are created when
   the pages run in your browser. Therefore, secret data exist only temporarily within
   the browser while it is open, unless manually copied elsewhere.
