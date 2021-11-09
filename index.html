@@ -6,8 +6,10 @@
 <script src="nacl.min.js"></script>
 <script src="nacl-util.min.js"></script>
 <script>
+  function setVal (id, val) { document.getElementById(id).value = val }
+  
   function generate () {
-    document.getElementById('ss').value = ''
+    setVal('ss', '')
     try {
       const ss = nacl.box.before(nacl.util.decodeBase64(getVal('tpk')), nacl.util.decodeBase64(getVal('sk')))
       setVal('ss', nacl.util.encodeBase64(ss))
