@@ -1,7 +1,7 @@
 ## shared-secret.github.io
 Create a secret password known only to you and another party, without ever communicating it.
 Uses the TweetNaCl-js implementaion of Curve25519 Diffie-Hellman key exchange.
-Optionally, short text messages may be encrypted/decrypted with secret password
+Optionally, short text messages may be encrypted/decrypted with the secret password
 using Salsa20 and Poly1305.
 
 Github page with usage instructions: https://shared-secret.github.io
