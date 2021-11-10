@@ -33,9 +33,9 @@
 <body onload="initSK()">
   <h3>Shared secret creation</h3>
   <input type="hidden" id="sk">
-  <p>My public key:&nbsp;<input type="text" id="mpk" size="60" readonly>&nbsp;<button onclick="copyText('mpk')">Copy</button></p>
-  <p>Their public key:&nbsp;<input type="text" id="tpk" size="60" oninput="generate()"></p>
-  <p>Shared secret:&nbsp;<input type="text" id="ss" size="60" readonly>&nbsp;<button onclick="copyText('ss')">Copy</button></p>
+  <p>My public key:&nbsp;<input type="text" id="mpk" size="55" readonly>&nbsp;<button onclick="copyText('mpk')">Copy</button></p>
+  <p>Their public key:&nbsp;<input type="text" id="tpk" size="55" oninput="generate()"></p>
+  <p>Shared secret:&nbsp;<input type="text" id="ss" size="55" readonly>&nbsp;<button onclick="copyText('ss')">Copy</button></p>
   <h4>Instructions</h4>
   <ol>
   <li>A random <i>My public key</i> is generated every time this page is refreshed. It is read only.</li>
