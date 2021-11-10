@@ -1,7 +1,8 @@
 ## shared-secret.github.io
 Create a secret password known only to you and another party, without ever communicating it.
+Uses the TweetNacl-js implementaion of Curve25519 Diffie-Hellman key exchange.
 
-Self-documented Github page: https://shared-secret.github.io
+Github page with usage instructions: https://shared-secret.github.io
 
 <h4>Security notes</h4>
   <p>The above HTML page, once served to your computer, has no further communication
