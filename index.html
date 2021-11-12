@@ -78,6 +78,7 @@
   [Tip: send an encrypted message containing a shorter password for future use.]
   Short text messages can be encrypted/decrypted with the shared secret above using the boxes below.
   </p>
+  <h3>Encryption</h3>
   <p>
   Text message to encrypt:<br><textarea id="text" rows="10" cols="100" oninput="encrypt()"></textarea>
   <br><button onclick="copyText('text')">Copy</button>
@@ -86,6 +87,16 @@
   Encrypted message to decrypt:<br><textarea id="code" rows="10" cols="100" oninput="decrypt()"></textarea>
   <br><button onclick="copyText('code')">Copy</button>
   </p>
+  <h4>Instructions</h4>
+  <ol>
+  <li>Create a shared secret at the top of this page.</li>
+  <li>Type or paste a text message into the upper box.</li>
+  <li>The encrypted message appears in the lower box as you type.</li>
+  <li>Copy the encrypted message in the lower box and send it to the other party.</li>
+  <li>When they receive it, they can paste it into their lower box.</li>
+  <li>If they have the shared secret, the original (decrypted) message will appear in their upper box.</li>
+  <li>They can reply to your message by following these instructions on their end.</li>
+  </ol>
   <p><a href="https://github.com/shared-secret/shared-secret.github.io">Source code and security notes</a></p>
 </body>
 </html>
