@@ -13,7 +13,7 @@ Github page with usage instructions: https://shared-secret.github.io
   the browser while it is open, unless manually copied elsewhere.
   The browser cache should be cleared before closing it. The clipboard should
   also be cleared if a secret was copied to it.</p>
-  <p>For enhanced peace of mind, save the HTML page to your computer and move it
+  <p>For enhanced peace of mind, save the HTML page to your computer when it is blank and move it
   to an offline computer before using. Review the dowloaded code, which includes the two libraries <i>nacl.min.js</i>
   and <i>nacl-util.min.js</i>, obtained from github user <i>dchest</i> (Dmitry Chestnykh).
   The originals are available at these links along with non-minified (and possibly more recent) versions:</p>
