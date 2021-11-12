@@ -28,18 +28,18 @@
     try {
       const text = getVal('text').trim()
       const encrypted = nacl.box.after(nacl.util.decodeUTF8(text), nonce, nacl.util.decodeBase64(getVal('ss')))
-      const noncencrypted = new Uint8Array(24 + encrypted.length)
-      noncencrypted.set(nonce)
-      noncencrypted.set(encrypted, 24)
-      setVal('code', nacl.util.encodeBase64(noncencrypted))
+      const code = new Uint8Array(24 + encrypted.length)
+      code.set(nonce)
+      code.set(encrypted, 24)
+      setVal('code', nacl.util.encodeBase64(code))
     } catch (err) { setVal('code', '') }
   }
 
   function decrypt () {
     try {
-      const noncencrypted = nacl.util.decodeBase64(getVal('code').trim())
-      const nonce = noncencrypted.subarray(0, 24)
-      const encrypted = noncencrypted.subarray(24)
+      const code = nacl.util.decodeBase64(getVal('code').trim())
+      const nonce = code.subarray(0, 24)
+      const encrypted = code.subarray(24)
       const decrypted = nacl.box.open.after(encrypted, nonce, nacl.util.decodeBase64(getVal('ss')))
       setVal('text', nacl.util.encodeUTF8(decrypted))
     } catch (err) { setVal('text', '') }
