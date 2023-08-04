@@ -55,6 +55,7 @@ function copyText (id) {
   textarea, input, .button { color: black; background-color: lightblue; }
   textarea, input{ font-size: 10px; margin-bottom: 10px; }
   textarea{ width: 100%; }
+  .keys { height: 15px; }
   .button { padding: 3px; font-weight: bold; margin-left: 15px; }
   .right { text-align: right; }
   #text { height: 70px; }
@@ -63,12 +64,15 @@ function copyText (id) {
 <body onload="initSK()">
 <div>
 <h2>Shared secret creation</h2>
-<p>
-<b>My public key:</b>&nbsp;<input type="text" id="mpk" size="55" readonly="">&nbsp;<span class="button" onclick="copyText('mpk')">Copy</span>
-<p>
-<b>Their public key:</b>&nbsp;<input type="text" id="tpk" size="55" oninput="generate()">
-<p>
-<b>Shared secret:</b>&nbsp;<input type="text" id="ss" size="55" readonly="">&nbsp;<span class="button" onclick="copyText('ss')">Copy</span>
+<b>My public key:</b><br>
+<textarea id="mpk" class="keys" readonly></textarea>
+<div class="right"><span class="button" onclick="copyText('mpk')">Copy</span></div>
+<b>Their public key:</b><br>
+<textarea id="tpk" class="keys" oninput="generate()"></textarea>
+<div class="right"><span class="button" onclick="copyText('tpk')">Copy</span></div>
+<b>Shared secret:</b><br>
+<textarea id="ss" class="keys" readonly></textarea>
+<div class="right"><span class="button" onclick="copyText('ss')">Copy</span></div>
 <h3>Instructions</h3>
 <ol>
 <li>A random <i>My public key</i> is generated every time this page is refreshed. It is read-only and base64 encoded.</li>
