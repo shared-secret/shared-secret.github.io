@@ -22,3 +22,10 @@ Github page with usage instructions: https://shared-secret.github.io
   <li><a href="https://github.com/dchest/tweetnacl-util-js/releases/tag/v0.15.0">tweetnacl-util-js v0.15.0</a></li>
   </ul>
   <p>TweetNaCl.js was ported from <a href="http://tweetnacl.cr.yp.to/">TweetNaCl</a> / <a href="http://nacl.cr.yp.to/">NaCl.</a></p>
+
+### Sister sites
+<ul>
+<li>https://hash-and-crypt.github.io
+<li>https://hash-and-sign.github.io
+<li>https://shared-secret.github.io
+</ul>
